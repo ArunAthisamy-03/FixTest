@@ -1,0 +1,203 @@
+        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        <!-- saved from url=(0035)http://localhost:49377/Default.aspx -->
+        <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <title>DemoWebApp: Survey</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="CSS/styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link href="https://getbootstrap.com/docs/4.2/examples/checkout/form-validation.css" rel="stylesheet">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script> -->
+
+        <script type="text/javascript" src = "JS/Script.js" >
+        </script>
+
+        </head>
+        <body>
+            
+        <div class="container">
+                <h1>Survey Demo</h1>
+                        
+                        
+                <div class="container">
+                    <!-- Trigger/Open The Modal -->
+                    <div class="row">
+                    <button id="myBtn">Show Instructions</button>
+                </div>
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+            
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p>
+                                <h2>Instructions:</h2>
+                                <ul>
+                                    <li>In the head of the document there is a JavaScript variable, datamodel, that contains a JSON data set for use in populating the dropdowns in the form, below.</li>
+                                    <li>On page load, bind the province dropdown using the data model.</li>
+                                    <li>On province selection, populate the city dropdown.</li>
+                                    <li>On city selection, display the description of the city from the data model (bonus points if shown on an embedded Google map or similar).</li>
+                                    <li>Place these instructions (and notes) into a collapsible element that can be hidden with a click or allow them to be shown in a modal overlay (with UI element showing instructions are available).</li>
+                                    <li>When the form is submitted, validate the fields are all populated (address 2 is optional).</li>
+                                    <li>If the form validates, hide the form and display the submitted values in place of the form. Offer the ability to return to the form and edit the provided answers.</li>
+                                </ul>
+                            
+                                <h3>Notes:</h3>
+                                <ul>
+                                    <li>You may use any resources available to you to complete these tasks in the alotted time. This includes Stack Overflow results, etc.</li>
+                                    <li>When completed, please email a zip archive of this file and any additional files required to view it in a browser to ahodder@fix.com.</li>
+                                    <li>Already included are the basic Bootstrap styles and JQuery. Feel free to add in additional CSS and JS as desired. There is no need to continue using Bootstrap or JQuery, they are provided for your convenience. You can also apply a template or use any other resources available to you to make layout and style the page.</li>
+                                    <li>Feel free to ask questions by email if you are not sure how to interpret an instruction.</li>
+                                    <li>If you cannot complete the tasks in the time allotted, please send back whatever work you did do.</li>
+                                    <li>Regardless of the state of your submission, please include notes if needed to make sure we can load and use the page. You can also any difficulties you encountered that you could not overcome.</li>
+                                </ul> 
+                        </p>
+                    </div>
+            
+                    </div>
+            
+
+            <form id="SubmitForm">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="txtName">Name: <span style="color:red;">*</span></label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="txtName" name="txtName" minlength="3" maxlength="30" pattern="[a-zA-Z\s]+" title="Please enter valid Name" placeholder="Your name.." required>
+                    </div>
+                </div>
+
+                <div class="row">
+                <div class="col-25">
+                    <label for="txtOccupation">Occupation: <span style="color:red;">*</span></label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="txtOccupation" name="txtOccupation" minlength="3" maxlength="30" pattern="[a-zA-Z\s]+" title="Please enter valid Occupation" placeholder="Your Occupation.." required>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="txtAddress1">Address (line 1): <span style="color:red;">*</span></label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="txtAddress1" name="txtAddress1" minlength="3" maxlength="30" pattern="[a-zA-Z0-9\s]+" title="Please enter valid address line 1" placeholder="Your Address.." required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="txtAddress2">Address (line 2): </label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="txtAddress2" name="txtAddress2" minlength="3" maxlength="30" pattern="[a-zA-Z0-9\s]+" title="Please enter valid address line 2" placeholder="Your Address..">
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="ddlProvince">Province: <span style="color:red;">*</span></label>
+                        </div>
+                        <div class="col-75">
+                                <select  id="ddlProvince" name="ddlProvince" required>
+                                        <option selected="selected" value="-1">Select a province</option>
+                                        </select>
+                        </div>
+                        </div>
+                    <div class="row">
+                            <div class="col-25">
+                                <label for="ddlCity">City: <span style="color:red;">*</span></label>
+                            </div>
+                            <div class="col-75">
+                                    <select  id="ddlCity" name="ddlCity" required>
+                                    </select>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <input type="submit" value="Submit">
+                    </div> 
+            
+            </form>
+
+            <div id="EditForm">
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="txtName">Name:</label>
+                        </div>
+                        <div class="col-75">
+                            <label id="submittedName"></label>
+                        </div>
+                    </div>
+        
+                    <div class="row">
+                    <div class="col-25">
+                        <label for="txtOccupation">Occupation:</label>
+                    </div>
+                    <div class="col-75">
+                        <label id="submittedOccupation"></label>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="txtAddress1">Address (line 1):</label>
+                        </div>
+                        <div class="col-75">
+                            <label id="submittedAddr1"></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="txtAddress2">Address (line 2): </label>
+                        </div>
+                        <div class="col-75">
+                            <label id="submittedAddr2"></label>
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="ddlProvince">Province: </label>
+                            </div>
+                            <div class="col-75">
+                                <label id="submittedProv"></label>
+                            </div>
+                            </div>
+                        <div class="row">
+                                <div class="col-25">
+                                    <label for="ddlCity">City: </label>
+                                </div>
+                                <div class="col-75">
+                                    <label id="submittedCity"></label>
+                                </div>
+                        </div>
+                        <div class="row">
+                                <div class="col-25">
+                                    <label for="cityDesc">City Description: </label>
+                                </div>
+                                <div class="col-75">
+                                    <label id="cityDesc"></label>
+                                </div>
+                        </div>
+                        <div class="row">
+                            <input id ="editButton" type="submit" value="Edit">
+                        </div> 
+                
+            </div>
+            
+        </div>
+        <div class="row" id="maps">
+
+                <div class="mapouter"><div class="gmap_canvas">
+                    <iframe width="600" height="500" id="gmap_canvas" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                    </iframe>
+                    <a href="https://www.emojilib.com">emojilib.com</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
+        </div>
+
+    </div>
+    
+    
+
+
+
+</body>
+</html>
